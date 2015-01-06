@@ -1,13 +1,19 @@
+require_relative 'test_methods'
 # Binary Search
+
+def binary_search(array, item_to_find)
+end
 
 # Tests
 
-def assert_equals(expected, actual, message)
-  puts "*" * 50
-  puts message.upcase
-  p expected == actual
-  puts "expected #{expected} and got #{actual}"
-  puts "*" * 50
-end
+sorted_array = [1,2,3,4,5]
+sorted_array_dups = [2,2,5,6,6,20]
 
-assert_equals(1,1,"1 should be equal to 1")
+puts "#binary_search should return the correct index of an item"
+
+assert_equals(2, binary_search(sorted_array, 3))
+assert_equals(0, binary_search(sorted_array, 1))
+assert_equals(3, binary_search(sorted_array, 4))
+assert_equals(nil, binary_search(sorted_array, 27))
+
+
