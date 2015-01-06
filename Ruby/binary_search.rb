@@ -11,7 +11,6 @@ def binary_search(array, item)
       upper = mid - 1
     else
       return mid
-      break
     end
   end
 end
