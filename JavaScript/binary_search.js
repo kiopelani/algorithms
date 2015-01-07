@@ -1,5 +1,20 @@
 function binarySearch(array, item){
+  var upper = array.length - 1;
+  var lower = 0;
 
+  while (upper >= lower) {
+    var mid = Math.floor((upper + lower) / 2);
+    if(item < array[mid]){
+      upper = mid - 1;
+    }
+    else if(item > array[mid]){
+      lower = mid + 1;
+    }
+    else{
+      return mid;
+    }
+  }
+    return null;
 }
 
 // TESTING //
