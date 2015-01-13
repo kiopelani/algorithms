@@ -24,9 +24,10 @@ class Stack
 
   private
   def full?
-    size >= @max_size ? true : false
+    size >= @max_size
   end
 end
+
 # TESTS
 
 my_stack = Stack.new(3)
