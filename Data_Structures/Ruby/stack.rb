@@ -3,21 +3,30 @@ class Stack
   def initialize(max_size)
     @store = []
     @max_size = max_size
+    @mins = []
   end
 
   def push(element)
     unless full?
+      @mins.push(element) if (@mins.last == nil || element <= @mins.last)
       @store.push(element)
       @store
     end
   end
 
   def pop
-    @store.pop
+    if @store.length > 0
+      @mins.pop if @store.last == @mins.last
+      @store.pop
+    end
   end
 
   def size
     @store.length
+  end
+
+  def min
+    @mins.last
   end
 
   private
@@ -39,3 +48,8 @@ p my_stack.size == 3
 p my_stack.pop == 3
 p my_stack.pop == 2
 p my_stack.size == 1
+p my_stack.min == 1
+p my_stack.push(0) == [1, 0]
+p my_stack.min == 0
+p my_stack.pop == 0
+p my_stack.min == 1
