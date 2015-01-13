@@ -15,7 +15,7 @@ def binary_search(array, item)
   end
 end
 
-# Tests
+########### TESTS ###############
 sorted_array = [1,2,3,4,5]
 sorted_array_even = [2,4,6,8,10,12]
 
