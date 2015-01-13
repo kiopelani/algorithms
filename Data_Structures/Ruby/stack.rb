@@ -1,5 +1,4 @@
 #Implement a basic stack in Ruby
-
 class Stack
   def initialize(max_size)
     @store = []
@@ -9,9 +8,8 @@ class Stack
   def push(element)
     unless full?
       @store.push(element)
-      return @store
+      @store
     end
-    nil
   end
 
   def pop
@@ -31,7 +29,6 @@ end
 # TESTS
 
 my_stack = Stack.new(3)
-
 p my_stack.size == 0
 p my_stack.pop == nil
 p my_stack.push(1) == [1]
@@ -42,4 +39,3 @@ p my_stack.size == 3
 p my_stack.pop == 3
 p my_stack.pop == 2
 p my_stack.size == 1
-
